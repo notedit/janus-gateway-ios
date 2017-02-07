@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBFFB1AE2536E1C8C191DAE3 /* libPods-JanusGateway.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 305F31948DCFAEF9694A32BF /* libPods-JanusGateway.a */; };
+		F05CDBE71E496A82001979B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDBE61E496A82001979B4 /* main.m */; };
+		F05CDBEA1E496A82001979B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDBE91E496A82001979B4 /* AppDelegate.m */; };
+		F05CDBED1E496A82001979B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDBEC1E496A82001979B4 /* ViewController.m */; };
+		F05CDBF01E496A82001979B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05CDBEE1E496A82001979B4 /* Main.storyboard */; };
+		F05CDBF21E496A82001979B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05CDBF11E496A82001979B4 /* Assets.xcassets */; };
+		F05CDBF51E496A82001979B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05CDBF31E496A82001979B4 /* LaunchScreen.storyboard */; };
+		F05CDBFF1E49708C001979B4 /* WebRTCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDBFE1E49708C001979B4 /* WebRTCClient.m */; };
+		F05CDC021E4993FD001979B4 /* WebRTCSignaling.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDC011E4993FD001979B4 /* WebRTCSignaling.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		305F31948DCFAEF9694A32BF /* libPods-JanusGateway.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JanusGateway.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B49E75858D06F7FF68E0408 /* Pods-JanusGateway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JanusGateway.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JanusGateway/Pods-JanusGateway.debug.xcconfig"; sourceTree = "<group>"; };
+		E72805F99D8AE04B4B0A9DA9 /* Pods-JanusGateway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JanusGateway.release.xcconfig"; path = "Pods/Target Support Files/Pods-JanusGateway/Pods-JanusGateway.release.xcconfig"; sourceTree = "<group>"; };
+		F05CDBE21E496A82001979B4 /* JanusGateway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JanusGateway.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F05CDBE61E496A82001979B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F05CDBE81E496A82001979B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F05CDBE91E496A82001979B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F05CDBEB1E496A82001979B4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F05CDBEC1E496A82001979B4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F05CDBEF1E496A82001979B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F05CDBF11E496A82001979B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F05CDBF41E496A82001979B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F05CDBF61E496A82001979B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F05CDBFD1E49708C001979B4 /* WebRTCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCClient.h; sourceTree = "<group>"; };
+		F05CDBFE1E49708C001979B4 /* WebRTCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCClient.m; sourceTree = "<group>"; };
+		F05CDC001E4993FD001979B4 /* WebRTCSignaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCSignaling.h; sourceTree = "<group>"; };
+		F05CDC011E4993FD001979B4 /* WebRTCSignaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCSignaling.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F05CDBDF1E496A82001979B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBFFB1AE2536E1C8C191DAE3 /* libPods-JanusGateway.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18A2A03481D9718F75A7512D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B49E75858D06F7FF68E0408 /* Pods-JanusGateway.debug.xcconfig */,
+				E72805F99D8AE04B4B0A9DA9 /* Pods-JanusGateway.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3BD15AE9916B6F2DF7AB5C45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				305F31948DCFAEF9694A32BF /* libPods-JanusGateway.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F05CDBD91E496A82001979B4 = {
+			isa = PBXGroup;
+			children = (
+				F05CDBE41E496A82001979B4 /* JanusGateway */,
+				F05CDBE31E496A82001979B4 /* Products */,
+				18A2A03481D9718F75A7512D /* Pods */,
+				3BD15AE9916B6F2DF7AB5C45 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F05CDBE31E496A82001979B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F05CDBE21E496A82001979B4 /* JanusGateway.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F05CDBE41E496A82001979B4 /* JanusGateway */ = {
+			isa = PBXGroup;
+			children = (
+				F05CDBE81E496A82001979B4 /* AppDelegate.h */,
+				F05CDBE91E496A82001979B4 /* AppDelegate.m */,
+				F05CDBEB1E496A82001979B4 /* ViewController.h */,
+				F05CDBEC1E496A82001979B4 /* ViewController.m */,
+				F05CDBEE1E496A82001979B4 /* Main.storyboard */,
+				F05CDBF11E496A82001979B4 /* Assets.xcassets */,
+				F05CDBF31E496A82001979B4 /* LaunchScreen.storyboard */,
+				F05CDBF61E496A82001979B4 /* Info.plist */,
+				F05CDBE51E496A82001979B4 /* Supporting Files */,
+				F05CDBFD1E49708C001979B4 /* WebRTCClient.h */,
+				F05CDBFE1E49708C001979B4 /* WebRTCClient.m */,
+				F05CDC001E4993FD001979B4 /* WebRTCSignaling.h */,
+				F05CDC011E4993FD001979B4 /* WebRTCSignaling.m */,
+			);
+			path = JanusGateway;
+			sourceTree = "<group>";
+		};
+		F05CDBE51E496A82001979B4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F05CDBE61E496A82001979B4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F05CDBE11E496A82001979B4 /* JanusGateway */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F05CDBF91E496A82001979B4 /* Build configuration list for PBXNativeTarget "JanusGateway" */;
+			buildPhases = (
+				8A772EE1F232B457162851EE /* [CP] Check Pods Manifest.lock */,
+				F05CDBDE1E496A82001979B4 /* Sources */,
+				F05CDBDF1E496A82001979B4 /* Frameworks */,
+				F05CDBE01E496A82001979B4 /* Resources */,
+				858A8E30F873D2BEFEAF0AB8 /* [CP] Embed Pods Frameworks */,
+				8498C3DBF922D5D2835CF3A7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JanusGateway;
+			productName = JanusGateway;
+			productReference = F05CDBE21E496A82001979B4 /* JanusGateway.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F05CDBDA1E496A82001979B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = dotEngine;
+				TargetAttributes = {
+					F05CDBE11E496A82001979B4 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = CLKRLU8RPY;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F05CDBDD1E496A82001979B4 /* Build configuration list for PBXProject "JanusGateway" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F05CDBD91E496A82001979B4;
+			productRefGroup = F05CDBE31E496A82001979B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F05CDBE11E496A82001979B4 /* JanusGateway */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F05CDBE01E496A82001979B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F05CDBF51E496A82001979B4 /* LaunchScreen.storyboard in Resources */,
+				F05CDBF21E496A82001979B4 /* Assets.xcassets in Resources */,
+				F05CDBF01E496A82001979B4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8498C3DBF922D5D2835CF3A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JanusGateway/Pods-JanusGateway-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		858A8E30F873D2BEFEAF0AB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JanusGateway/Pods-JanusGateway-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A772EE1F232B457162851EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F05CDBDE1E496A82001979B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F05CDBED1E496A82001979B4 /* ViewController.m in Sources */,
+				F05CDC021E4993FD001979B4 /* WebRTCSignaling.m in Sources */,
+				F05CDBEA1E496A82001979B4 /* AppDelegate.m in Sources */,
+				F05CDBE71E496A82001979B4 /* main.m in Sources */,
+				F05CDBFF1E49708C001979B4 /* WebRTCClient.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F05CDBEE1E496A82001979B4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F05CDBEF1E496A82001979B4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F05CDBF31E496A82001979B4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F05CDBF41E496A82001979B4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F05CDBF71E496A82001979B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F05CDBF81E496A82001979B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F05CDBFA1E496A82001979B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B49E75858D06F7FF68E0408 /* Pods-JanusGateway.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CLKRLU8RPY;
+				INFOPLIST_FILE = JanusGateway/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.dot.engine.JanusGateway;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F05CDBFB1E496A82001979B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E72805F99D8AE04B4B0A9DA9 /* Pods-JanusGateway.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CLKRLU8RPY;
+				INFOPLIST_FILE = JanusGateway/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.dot.engine.JanusGateway;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F05CDBDD1E496A82001979B4 /* Build configuration list for PBXProject "JanusGateway" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F05CDBF71E496A82001979B4 /* Debug */,
+				F05CDBF81E496A82001979B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F05CDBF91E496A82001979B4 /* Build configuration list for PBXNativeTarget "JanusGateway" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F05CDBFA1E496A82001979B4 /* Debug */,
+				F05CDBFB1E496A82001979B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F05CDBDA1E496A82001979B4 /* Project object */;
+}

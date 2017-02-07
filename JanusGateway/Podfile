@@ -1,0 +1,10 @@
+
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+
+target "JanusGateway" do
+    pod 'AFNetworking'
+    pod 'SocketRocket'
+    pod 'WebRTC', :git => 'https://github.com/Anakros/WebRTC.git'
+end
