@@ -9,6 +9,8 @@
 #import "WebRTCSignaling.h"
 
 
+
+
 @interface WebRTCSignaling () <SRWebSocketDelegate>
 @end
 
@@ -21,7 +23,6 @@
 {
     
     self = [super init];
-    _state = kSignalingStateClosed;
     _delegate = delegate;
     _url = url;
     _socekt = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:_url]];

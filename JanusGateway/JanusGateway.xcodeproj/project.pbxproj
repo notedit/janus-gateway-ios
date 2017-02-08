@@ -16,6 +16,7 @@
 		F05CDBF51E496A82001979B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05CDBF31E496A82001979B4 /* LaunchScreen.storyboard */; };
 		F05CDBFF1E49708C001979B4 /* WebRTCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDBFE1E49708C001979B4 /* WebRTCClient.m */; };
 		F05CDC021E4993FD001979B4 /* WebRTCSignaling.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDC011E4993FD001979B4 /* WebRTCSignaling.m */; };
+		F05CDC051E49C4F5001979B4 /* WebRTCStream.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDC041E49C4F5001979B4 /* WebRTCStream.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		F05CDBFE1E49708C001979B4 /* WebRTCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCClient.m; sourceTree = "<group>"; };
 		F05CDC001E4993FD001979B4 /* WebRTCSignaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCSignaling.h; sourceTree = "<group>"; };
 		F05CDC011E4993FD001979B4 /* WebRTCSignaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCSignaling.m; sourceTree = "<group>"; };
+		F05CDC031E49C4F5001979B4 /* WebRTCStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCStream.h; sourceTree = "<group>"; };
+		F05CDC041E49C4F5001979B4 /* WebRTCStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCStream.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				F05CDBFE1E49708C001979B4 /* WebRTCClient.m */,
 				F05CDC001E4993FD001979B4 /* WebRTCSignaling.h */,
 				F05CDC011E4993FD001979B4 /* WebRTCSignaling.m */,
+				F05CDC031E49C4F5001979B4 /* WebRTCStream.h */,
+				F05CDC041E49C4F5001979B4 /* WebRTCStream.m */,
 			);
 			path = JanusGateway;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05CDC051E49C4F5001979B4 /* WebRTCStream.m in Sources */,
 				F05CDBED1E496A82001979B4 /* ViewController.m in Sources */,
 				F05CDC021E4993FD001979B4 /* WebRTCSignaling.m in Sources */,
 				F05CDBEA1E496A82001979B4 /* AppDelegate.m in Sources */,
