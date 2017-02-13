@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EBFFB1AE2536E1C8C191DAE3 /* libPods-JanusGateway.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 305F31948DCFAEF9694A32BF /* libPods-JanusGateway.a */; };
+		95964FF859650E2483CB54E0 /* libPods-JanusGateway.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 128A81F868A22098A7C62B06 /* libPods-JanusGateway.a */; };
 		F05CDBE71E496A82001979B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDBE61E496A82001979B4 /* main.m */; };
 		F05CDBEA1E496A82001979B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDBE91E496A82001979B4 /* AppDelegate.m */; };
 		F05CDBED1E496A82001979B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDBEC1E496A82001979B4 /* ViewController.m */; };
@@ -16,11 +16,11 @@
 		F05CDBF51E496A82001979B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05CDBF31E496A82001979B4 /* LaunchScreen.storyboard */; };
 		F05CDBFF1E49708C001979B4 /* WebRTCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDBFE1E49708C001979B4 /* WebRTCClient.m */; };
 		F05CDC021E4993FD001979B4 /* WebRTCSignaling.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDC011E4993FD001979B4 /* WebRTCSignaling.m */; };
-		F05CDC051E49C4F5001979B4 /* WebRTCStream.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDC041E49C4F5001979B4 /* WebRTCStream.m */; };
+		F05CDC051E49C4F5001979B4 /* WebRTCPeer.m in Sources */ = {isa = PBXBuildFile; fileRef = F05CDC041E49C4F5001979B4 /* WebRTCPeer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		305F31948DCFAEF9694A32BF /* libPods-JanusGateway.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JanusGateway.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		128A81F868A22098A7C62B06 /* libPods-JanusGateway.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JanusGateway.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B49E75858D06F7FF68E0408 /* Pods-JanusGateway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JanusGateway.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JanusGateway/Pods-JanusGateway.debug.xcconfig"; sourceTree = "<group>"; };
 		E72805F99D8AE04B4B0A9DA9 /* Pods-JanusGateway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JanusGateway.release.xcconfig"; path = "Pods/Target Support Files/Pods-JanusGateway/Pods-JanusGateway.release.xcconfig"; sourceTree = "<group>"; };
 		F05CDBE21E496A82001979B4 /* JanusGateway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JanusGateway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,8 +37,8 @@
 		F05CDBFE1E49708C001979B4 /* WebRTCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCClient.m; sourceTree = "<group>"; };
 		F05CDC001E4993FD001979B4 /* WebRTCSignaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCSignaling.h; sourceTree = "<group>"; };
 		F05CDC011E4993FD001979B4 /* WebRTCSignaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCSignaling.m; sourceTree = "<group>"; };
-		F05CDC031E49C4F5001979B4 /* WebRTCStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCStream.h; sourceTree = "<group>"; };
-		F05CDC041E49C4F5001979B4 /* WebRTCStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCStream.m; sourceTree = "<group>"; };
+		F05CDC031E49C4F5001979B4 /* WebRTCPeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCPeer.h; sourceTree = "<group>"; };
+		F05CDC041E49C4F5001979B4 /* WebRTCPeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCPeer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBFFB1AE2536E1C8C191DAE3 /* libPods-JanusGateway.a in Frameworks */,
+				95964FF859650E2483CB54E0 /* libPods-JanusGateway.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 		3BD15AE9916B6F2DF7AB5C45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				305F31948DCFAEF9694A32BF /* libPods-JanusGateway.a */,
+				128A81F868A22098A7C62B06 /* libPods-JanusGateway.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -91,6 +91,7 @@
 		F05CDBE41E496A82001979B4 /* JanusGateway */ = {
 			isa = PBXGroup;
 			children = (
+				F05CDC061E4B4A41001979B4 /* Category */,
 				F05CDBE81E496A82001979B4 /* AppDelegate.h */,
 				F05CDBE91E496A82001979B4 /* AppDelegate.m */,
 				F05CDBEB1E496A82001979B4 /* ViewController.h */,
@@ -104,8 +105,8 @@
 				F05CDBFE1E49708C001979B4 /* WebRTCClient.m */,
 				F05CDC001E4993FD001979B4 /* WebRTCSignaling.h */,
 				F05CDC011E4993FD001979B4 /* WebRTCSignaling.m */,
-				F05CDC031E49C4F5001979B4 /* WebRTCStream.h */,
-				F05CDC041E49C4F5001979B4 /* WebRTCStream.m */,
+				F05CDC031E49C4F5001979B4 /* WebRTCPeer.h */,
+				F05CDC041E49C4F5001979B4 /* WebRTCPeer.m */,
 			);
 			path = JanusGateway;
 			sourceTree = "<group>";
@@ -116,6 +117,13 @@
 				F05CDBE61E496A82001979B4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F05CDC061E4B4A41001979B4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F05CDC051E49C4F5001979B4 /* WebRTCStream.m in Sources */,
+				F05CDC051E49C4F5001979B4 /* WebRTCPeer.m in Sources */,
 				F05CDBED1E496A82001979B4 /* ViewController.m in Sources */,
 				F05CDC021E4993FD001979B4 /* WebRTCSignaling.m in Sources */,
 				F05CDBEA1E496A82001979B4 /* AppDelegate.m in Sources */,
@@ -366,7 +374,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CLKRLU8RPY;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JanusGateway/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.dot.engine.JanusGateway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -379,7 +389,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CLKRLU8RPY;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JanusGateway/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.dot.engine.JanusGateway;
 				PRODUCT_NAME = "$(TARGET_NAME)";

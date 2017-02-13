@@ -11,7 +11,7 @@
 
 #import <WebRTC/WebRTC.h>
 
-
+#import "WebRTCPeer.h"
 
 typedef NS_ENUM(NSInteger, WebRTCClientState) {
     // Disconnected from servers.
@@ -27,29 +27,22 @@ typedef NS_ENUM(NSInteger, WebRTCClientState) {
 
 @protocol WebRTCClientDelegate <NSObject>
 
--(void)client:(WebRTCClient *)client didJoin:(uint64_t)userid withHandleID:(uint64_t)handleid;
+-(void)client:(WebRTCClient *)client didJoin:(uint64_t)userid;
 
--(void)client:(WebRTCClient *)client didLeave:(uint64_t)userid withHandleID:(uint64_t)handleid;
+-(void)client:(WebRTCClient *)client didLeave:(uint64_t)userid;
 
--(void)client:(WebRTCClient *)client didReceiveLocalVideoTrack:(RTCVideoTrack *)track;
+-(void)client:(WebRTCClient *)client didOccourError:(NSInteger)errorCode;
 
--(void)client:(WebRTCClient *)client didReceiveLocalAudioTrack:(RTCAudioTrack *)track;
+-(void)client:(WebRTCClient *)client didReceiveLocalVideo:(WebRTCPeer *)peer;
 
--(void)client:(WebRTCClient *)client didReceiveRemoteVideoTrack:(RTCVideoTrack *)track;
+-(void)client:(WebRTCClient *)client didReceiveRemoteVideo:(WebRTCPeer *)peer;
 
--(void)client:(WebRTCClient *)client didReceiveRemoteAudioTrack:(RTCAudioTrack *)track;
+-(void)client:(WebRTCClient *)client didRemoveLocalVideo:(WebRTCPeer *)peer;
 
--(void)client:(WebRTCClient *)client didRemoveLocalVideoTrack:(RTCVideoTrack *)track;
+-(void)client:(WebRTCClient *)client didRemoveRemoteVideo:(WebRTCPeer *)peer;
 
--(void)client:(WebRTCClient *)client didRemoveLocalAudioTrack:(RTCAudioTrack *)track;
-
--(void)client:(WebRTCClient *)client didRemoveRemoteVideoTrack:(RTCVideoTrack*)track;
-
--(void)client:(WebRTCClient *)client didRemoveRemoreAudioTrack:(RTCAudioTrack *)track;
 
 @end
-
-
 
 
 @interface WebRTCClient : NSObject
@@ -57,12 +50,12 @@ typedef NS_ENUM(NSInteger, WebRTCClientState) {
 
 @property(nonatomic, readonly) WebRTCClientState state;
 @property(nonatomic, weak) id<WebRTCClientDelegate> delegate;
-@property(nonatomic, strong) NSMutableDictionary* handleMap;
 @property(nonatomic, strong) RTCMediaStream *localMediaStream;
+@property(nonatomic, strong) WebRTCPeer* localPeer;
+@property(nonatomic, strong) NSMutableDictionary* peers;
+
 
 -(instancetype)initWithDelegate:(id<WebRTCClientDelegate>)delegate;
-
-- (void)setCameraConstraints:(RTCMediaConstraints *)mediaConstraints;
 
 - (void)startLocalMedia;
 
@@ -71,8 +64,8 @@ typedef NS_ENUM(NSInteger, WebRTCClientState) {
 - (void)joinRoomWith:(uint64_t)room
              userid:(uint64_t)user;
 
-
 - (void)leaveRoom;
 
+- (void)sendMessage:(NSDictionary*)message;
 
 @end
