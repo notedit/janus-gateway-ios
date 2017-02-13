@@ -32,6 +32,8 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
     // for local test
     uint64_t  _session;
     
+    NSNumber*  _private_id;
+    
 }
 
 @end
@@ -265,6 +267,7 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
     
     [_localPeer.peerconnection addStream:_localMediaStream];
     
+    [_localPeer setMaxBitrate:@200];
     
     [_localPeer.peerconnection offerForConstraints:[self offerConstraints] completionHandler:^(RTCSessionDescription * _Nullable sdp, NSError * _Nullable error) {
         
@@ -326,6 +329,7 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
                                       @"room":[NSNumber numberWithUnsignedLongLong:_room],
                                       @"userid":[NSNumber numberWithUnsignedLongLong:userid],
                                       @"role":@"listener",
+                                      @"private_id":_private_id,
                                     },
                               
                               };
@@ -493,6 +497,8 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
         }
         
         [self publish:_localPeer];
+        
+        _private_id = [data valueForKeyPath:@"data.private_id"];
         
         NSArray* publishers = [data valueForKeyPath:@"data.publishers"];
         
