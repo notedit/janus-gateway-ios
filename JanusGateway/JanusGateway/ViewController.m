@@ -19,6 +19,8 @@
 
 
 
+
+
 static uint64_t  ROOM = 1234;
 
 @interface ViewController ()<WebRTCClientDelegate>
@@ -42,6 +44,8 @@ static uint64_t  ROOM = 1234;
     _joinButton.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
     
     webrtcClient = [[WebRTCClient alloc] initWithDelegate:self];
+    
+    RTCSetMinDebugLogLevel(RTCLoggingSeverityVerbose);
 }
 
 

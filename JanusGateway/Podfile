@@ -7,5 +7,5 @@ target "JanusGateway" do
     pod 'CRToast', '~> 0.0.7'
     pod 'AFNetworking'
     pod 'SocketRocket'
-    pod 'WebRTC', :git => 'https://github.com/Anakros/WebRTC.git'
+    pod 'WebRTC', '~> 56.10.15101'
 end

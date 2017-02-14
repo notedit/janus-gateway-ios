@@ -19,7 +19,7 @@ static NSString * const kMediaStreamId = @"ARDAMS";
 
 NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
 
-@interface WebRTCClient () <WebRTCSignalingDelegate,RTCPeerConnectionDelegate,WebRTCPeerDelegate>
+@interface WebRTCClient () <WebRTCSignalingDelegate,WebRTCPeerDelegate>
 {
     RTCMediaConstraints*  _mediaConstraints;
     RTCPeerConnectionFactory *_peerConnectionFactory;
@@ -165,22 +165,24 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
     RTCIceServer* server = [[RTCIceServer alloc] initWithURLStrings:@[@"stun:101.201.141.179:3478"]];
     config.iceServers = @[server];
     
+    config.continualGatheringPolicy = RTCContinualGatheringPolicyGatherContinually;
+    
     // more config
     return config;
 }
 
 - (RTCMediaConstraints *)offerConstraints
 {
-    NSDictionary *optional = @{@"VoiceActivityDetection":@"true"};
+    //NSDictionary *optional = @{@"VoiceActivityDetection":@"true"};
     NSDictionary *mandatoryConstraints = @{
-                                           @"OfferToReceiveAudio":@"true",
-                                           @"OfferToReceiveVideo":@"true"
+                                           @"OfferToReceiveAudio":@"false",
+                                           @"OfferToReceiveVideo":@"false"
                                            };
     
     
     RTCMediaConstraints *constraints = [[RTCMediaConstraints alloc]
                                         initWithMandatoryConstraints:mandatoryConstraints
-                                        optionalConstraints:optional];
+                                        optionalConstraints:nil];
     
     return constraints;
 }
@@ -206,10 +208,10 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
     NSDictionary *videoConstraints = @{
                                        @"maxWidth":[NSString stringWithFormat:@"%d", 1280],
                                        @"maxHeight":[NSString stringWithFormat:@"%d", 1280],
-                                       @"minWidth":[NSString stringWithFormat:@"%d", 180],
-                                       @"minHeight":[NSString stringWithFormat:@"%d", 180],
+                                       @"minWidth":[NSString stringWithFormat:@"%d", 120],
+                                       @"minHeight":[NSString stringWithFormat:@"%d", 120],
                                        @"minFrameRate":[NSString stringWithFormat:@"%d", 15],
-                                       @"maxFrameRate":[NSString stringWithFormat:@"%d", 20]
+                                       @"maxFrameRate":[NSString stringWithFormat:@"%d", 15]
                                        };
     
     RTCMediaConstraints *constraints = [[RTCMediaConstraints alloc]
@@ -321,6 +323,8 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
                                  peerConnectionWithConfiguration:[self rtcConfiguration]
                                  constraints:[self connectionConstraints] delegate:webrtcPeer];
     
+    //[webrtcPeer.peerconnection addStream:_localMediaStream];
+    
     NSDictionary* message = @{
                               @"session":[NSNumber numberWithUnsignedLongLong:_session],
                               @"type":@"attach",
@@ -408,15 +412,9 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
 
 
 
--(void)trickleCandidate:(WebRTCPeer*)peer  candidate:(RTCIceCandidate*)candidate
+-(void)trickleCandidate:(WebRTCPeer*)peer  candidate:(NSDictionary*)candidate
 {
 
-    NSDictionary* ice = @{
-                          @"candidate":candidate.sdp,
-                          @"sdpMid":candidate.sdpMid,
-                          @"sdpMLineIndex":@(candidate.sdpMLineIndex),
-                          };
-    
     
     NSDictionary* message = @{
                               @"session":[NSNumber numberWithUnsignedLongLong:_session],
@@ -424,7 +422,7 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
                               @"type":@"ice",
                               @"room": [NSNumber numberWithUnsignedLongLong:_room],
                               @"data":@{
-                                      @"candidate":ice,
+                                      @"candidate":candidate,
                                       },
                               };
     
@@ -492,7 +490,7 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
         NSNumber* handleID = [data objectForKey:@"handle"];
         _localPeer.handleID = [handleID unsignedLongLongValue];
         
-        if ([_delegate respondsToSelector:@selector(client:didJoin:withHandleID:)]) {
+        if ([_delegate respondsToSelector:@selector(client:didJoin:)]) {
             [_delegate client:self didJoin:_localPeer.userID];
         }
         
@@ -614,7 +612,6 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
 {
     
     NSLog(@"peer userid %llu didReceiveRemoteVideo", peer.userID);
-
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -650,8 +647,27 @@ NSString* kWebsocketServerURL = @"ws://101.201.141.179:9000/ws";
 -(void)peer:(WebRTCPeer*)peer didGotCandidate:(RTCIceCandidate*)candidate
 {
     
-    [self trickleCandidate:peer candidate:candidate];
+    if (candidate) {
+        
+        NSDictionary* ice = @{
+                              @"candidate":candidate.sdp,
+                              @"sdpMid":candidate.sdpMid,
+                              @"sdpMLineIndex":@(candidate.sdpMLineIndex)
+                              };
+        
+        [self trickleCandidate:peer candidate:ice];
 
+        
+    } else {
+        NSDictionary* ice = @{
+                              @"completed": @true
+                              };
+        [self trickleCandidate:peer candidate:ice];
+
+    }
+
+    
+    
 }
 
 

@@ -8,10 +8,16 @@
 
 #import "WebRTCPeer.h"
 
-@interface WebRTCPeer ()<RTCPeerConnectionDelegate>
+#import <WebRTC/RTCEAGLVideoView.h>
+
+@interface WebRTCPeer ()<RTCPeerConnectionDelegate,RTCEAGLVideoViewDelegate>
 {
     
     NSNumber* _maxBitrate;
+    
+    BOOL  _hasVideo;
+    
+    RTCVideoTrack* _removeVideoTrack;
     
 }
 
@@ -24,6 +30,7 @@
     self = [super init];
     _delegate = delegate;
     _view = [[RTCEAGLVideoView alloc] init];
+    _view.delegate = self;
     return self;
 }
 
@@ -110,6 +117,18 @@
 #pragma
 
 
+-(void)videoView:(RTCEAGLVideoView *)videoView didChangeVideoSize:(CGSize)size
+{
+    
+    if (!_hasVideo) {
+        _hasVideo = true;
+        
+    }
+    NSLog(@"didChangeVideoSize height %f  width %f", size.height,size.width);
+    
+}
+
+
 /** Called when the SignalingState changed. */
 - (void)peerConnection:(RTCPeerConnection *)peerConnection
 didChangeSignalingState:(RTCSignalingState)stateChanged
@@ -122,11 +141,18 @@ didChangeSignalingState:(RTCSignalingState)stateChanged
           didAddStream:(RTCMediaStream *)stream
 {
     NSLog(@"didAddStream ");
-    if ([_delegate respondsToSelector:@selector(peer:didReceiveRemoteVideo:)]) {
-        if ([stream.videoTracks count] > 0) {
-            [_delegate peer:self didReceiveRemoteVideo:stream.videoTracks[0]];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        RTCLog(@"Received %lu video tracks and %lu audio tracks",
+               (unsigned long)stream.videoTracks.count,
+               (unsigned long)stream.audioTracks.count);
+        if (stream.videoTracks.count) {
+            _removeVideoTrack = stream.videoTracks[0];
+            [_delegate peer:self didReceiveRemoteVideo:_removeVideoTrack];
+
         }
-    }
+    });
+    
 }
 
 /** Called when a remote peer closes a stream. */
@@ -163,6 +189,17 @@ didChangeIceConnectionState:(RTCIceConnectionState)newState
 didChangeIceGatheringState:(RTCIceGatheringState)newState
 {
     NSLog(@"didChangeIceGatheringState");
+    
+    switch (newState) {
+        case RTCIceGatheringStateNew:
+            break;
+        case RTCIceGatheringStateGathering:
+            break;
+        case RTCIceGatheringStateComplete:
+            [_delegate peer:self didGotCandidate:nil];
+        default:
+            break;
+    }
 }
 
 /** New ice candidate has been found. */
@@ -170,9 +207,9 @@ didChangeIceGatheringState:(RTCIceGatheringState)newState
 didGenerateIceCandidate:(RTCIceCandidate *)candidate
 {
     NSLog(@"didGenerateIceCandidate %@",candidate);
-    if ([_delegate respondsToSelector:@selector(peer:didGotCandidate:)]) {
-        [_delegate peer:self didGotCandidate:candidate];
-    }
+    
+    [_delegate peer:self didGotCandidate:candidate];
+    
 }
 
 /** Called when a group of local Ice candidates have been removed. */
